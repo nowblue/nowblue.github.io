@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>index</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .wrap {
+            min-width: 1000px;
+            max-width: 1920px;
+            margin: 0px auto;
+            background-image: url("src/bg.jpg");
+            background-repeat: no-repeat;
+            /* repeat(x,y축 위아래 둘 다), repeat-x, repeat-y, no-repeat; ---no repeat 시에 background color를 정해 놓으면 background img가 없는 부분에 색상으로 채워진다 */
+            background-color: white;
+            background-size: cover;
+            background-position: 50% 50%;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+            -ms-overflow-style: none;
+
+        }
+
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /*특정 부분 스크롤바 없애기*/
+
+
+        .wrap::-webkit-scrollbar {
+            display: none;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        video {
+            display: inline-block;
+        }
+
+        .audio {
+            opacity: 0.5;
+            /* 투명도 조절 */
+        }
+
+
+        .text p {
+            line-height: 30px;
+            margin-top: 30px;
+        }
+
+        video {
+            margin-top: 80px;
+        }
+
+        #was {
+            text-align: center;
+            padding: 120px 0px 30px 20px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <nav>
+        <ul>
+            <li><a href="tea.html" target="_blank">TEA</a></li>
+            <li><a href="recipe.html" target="_blank">RECIPE</a></li>
+            <li><a href="brand.html" target="_blank">BRAND</a></li>
+            <li><a href="recommand.html" target="_blank">RECOMMAND</a></li>
+            <li><a href="map.html" target="_blank">MAP</a></li>
+        </ul>
+    </nav> -->
+    <div class="wrap">
+        <header>
+            <h1><a href="index.html"><img src="src/logo.png" class="logo" /></a></h1>
+            <ul>
+                <li><a href="tea.html">TEA</a></li>
+                <li><a href="recipe.html">RECIPE</a></li>
+                <li><a href="brand.html">BRAND</a></li>
+                <li><a href="recommand.html">RECOMMAND</a></li>
+                <li><a href="map.html">MAP</a></li>
+            </ul>
+        </header>
+        <main>
+            <video controls src="src/video2.mp4" style="width: 700px;" autoplay></video>
+            <div class="text">
+                <p>
+                    이 사이트는 주인장의 취미에 관한 사심이 가득 담겨있습니다.<br />
+                    쉽게 즐기기 어렵다고 느끼는 많은 사람들에게 도움이 되고자 사이트를 제작하였으니, <br />
+                    부디 흥미롭게 둘러봐주시길 바랍니다!
+                </p>
+            </div>
+        </main>
+        <div id="was">
+            <audio controls src="src/rain-03.mp3" class="audio"></audio>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="mailto:" season460@kaywon.ac.kr>e-mail</a></li>
+                <li><a href="https://github.com/nowblue/nowblue.github.com.git">Github</a></li>
+                <li>About</li>
+                <li>Work</li>
+            </ul>
+            <p>KAYWON UNIVERSITY DIGITAL MEDIA DESIGN SONG HARIM<br />
+                copyrtghtⓒSONG HARIM All RIGHT RESERVED </p>
+        </footer>
+
+    </div>
+
+    <script>
+        // 자연스러운 페이드 인 효과를 구현하는 함수
+        function fadeIn(element) {
+            var opacity = 0;
+            var targetOpacity = 1;
+            var duration = 1000; // 밀리초 단위의 페이드 인 지속 시간 (1초)
+            var startTime = null;
+
+            function animate(currentTime) {
+                if (!startTime) {
+                    startTime = currentTime;
+                }
+                var elapsedTime = currentTime - startTime;
+                var progress = elapsedTime / duration;
+
+                opacity = progress * targetOpacity;
+                element.style.opacity = opacity;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // 페이지가 로드될 때 실행되는 함수
+        window.onload = function () {
+            var textElement = document.querySelector('.text');
+            fadeIn(textElement); // text 요소에 페이드 인 효과 적용
+        };
+    </script>
+
+</body>
+
+</html>

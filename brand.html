@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>brand</title>
+    <style>
+        #wrap {
+            /* background: #1a2218; */
+            /* repeat(x,y축 위아래 둘 다), repeat-x, repeat-y, no-repeat; ---no repeat 시에 background color를 정해 놓으면 background img가 없는 부분에 색상으로 채워진다 */
+            background-color: #ffffff;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #warp {
+            min-width: 1000px;
+            max-width: 1920px;
+            margin: 0px auto;
+        }
+
+        header {
+            padding: 20px;
+            color: white;
+            display: flex;
+        }
+
+        #main_header {
+            margin: 100px 0px 0px 0px;
+        }
+
+        h1 {
+            margin: 10px 10px;
+        }
+
+        h1 img {
+            width: 100px;
+            height: auto;
+        }
+
+        header ul {
+            display: flex;
+            margin-left: auto;
+        }
+
+        header ul li {
+            list-style: none;
+            padding: 0px 15px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        header>ul>li>a:hover {
+            color: #5aa344;
+            /*마우스 올렸을 떄*/
+            font-weight: 800;
+        }
+
+
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* .wrap1 {
+            margin-top: 50px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container p {
+            color: #333;
+            font-size: 0.8rem;
+            font-weight: 500;
+        } */
+
+
+        .wrap1 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            width: calc(33.333% - 10px);
+            /* 너비 조정 */
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            /* 변경된 배경색 */
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            /* 변경된 그림자 */
+            text-align: center;
+        }
+
+        .container h3 {
+            color: #495057;
+            /* 변경된 제목 색상 */
+            font-size: 1.5rem;
+            /* 변경된 제목 폰트 크기 */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container ul li {
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            color: #495057;
+            /* 변경된 텍스트 색상 */
+            /* font-size: 1rem; 변경된 폰트 크기 */
+        }
+
+        .container img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* 변경된 그림자 */
+        }
+
+        .number {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .comment1 {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .comment2 {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .name {
+            font-size: 1.3rem;
+            font-weight: 900;
+        }
+
+
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: inline;
+            margin: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        footer{
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer p {
+            font-size: 0.5em;
+            margin: 0px;
+            padding: 10px 0px 20px 0px;
+        }
+
+        footer ul {
+            list-style: none;
+            display: inline-flex;
+        }
+
+        footer li {
+            padding: 0px 20px 0px 0px;
+        }
+
+        footer li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        footer li :hover {
+            color: #5aa344;
+            text-shadow: 3px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <h1><a href="index.html"><img src="src/logo.png" class="logo" /></a></h1>
+            <ul>
+                <li><a href="tea.html">TEA</a></li>
+                <li><a href="recipe.html">RECIPE</a></li>
+                <li><a href="brand.html">BRAND</a></li>
+                <li><a href="recommand.html">RECOMMAND</a></li>
+                <li><a href="map.html">MAP</a></li>
+            </ul>
+        </header>
+        <div class="wrap1">
+            <div class="container">
+                <h3>SIGNITURE LINE</h3>
+                <ul class="signiture">
+                    <li>
+                        <p class="number">1</p>
+                        <p class="comment1">카페인프리 · 허브티 · ICED</p>
+                        <p class="name">쿨허벌 COOL HERBAL</p>
+                        <img src="src/cool.png.webp" alt="">
+                        <p class="comment2">
+                            감초와 사과가 내는 자연스러운 단맛과<br />
+                            페퍼민트, 레몬그라스의 싱그러운 향이
+                            <br />입 안을 감도는 티
+                        </p>
+                    </li>
+                    <li>
+                        <p class="number">2</p>
+                        <p class="comment1">카페인프리 · 허브티 · 밀크티 추천</p>
+                        <p class="name">루이보스 바닐라 ROOIBOS VANILLA</p>
+                        <img src="src/rooibos.jpg.webp" alt="">
+                        <p class="comment2">
+                            루이보스의 깊고 풍부한 맛에 크림과 바닐라의<br />
+                            향을 더해 부드럽게 즐길 수 있는 티
+                        </p>
+                    </li>
+                    <li>
+                        <p class="number">3</p>
+                        <p class="comment1">백차 · HOT&ICED</p>
+                        <p class="name">화이트템플 WHITE TEMPLE</p>
+                        <img src="src/white.jpg.webp" alt="">
+                        <p class="comment2">
+                            백차와 이국적인 과일의 블렌딩이 만들어내는<br />
+                            향긋함이 매력인 티
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <h3>CLASSIC LINE</h3>
+                <ul class="classic">
+                    <li>
+                        <p class="number">4</p>
+                        <p class="comment1">홍차 · HOT&ICED · 밀크티 추천</p>
+                        <p class="name">얼그레이 EARL GREY</p>
+                        <img src="src/earlgray.jpg.webp" alt="">
+                        <p class="comment2">
+                            클래식한 얼그레이에 열대과일인 리치 향을<br />
+                            더해 산뜻하고 가벼운 느낌으로 즐길 수 있는<br />
+                            가향 홍차
+                        </p>
+                    </li>
+                    <li>
+                        <p class="number">5</p>
+                        <p class="comment1">녹차 · HOT&ICED</p>
+                        <p class="name">그린루바브 GREEN RHUBARB</p>
+                        <img src="src/green.jpg.webp" alt="">
+                        <p class="comment2">
+                            좋은 품질의 녹차에 크리미한 루바브향을 더해
+                            <br />산뜻하고 부드럽게 즐길 수 있는 티
+                        </p>
+                    </li>
+                    <li>
+                        <p class="number">6</p>
+                        <p class="comment1">녹차 · HOT&ICED</p>
+                        <p class="name">그린자스민트 GREEN JASMINT</p>
+                        <img src="src/jasmint.jpg.webp" alt="">
+                        <p class="comment2">
+                            유기농 자스민 녹차에 스피어민트를 더하여<br />
+                            상쾌하고 깔끔하게 마시기 좋은 티
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container">
+                <h3>UNIQUE TEA</h3>
+                <ul class="unique">
+                    <li>
+                        <p class="number">7</p>
+                        <p class="comment1">카페인프리 · 허브티 · ICED</p>
+                        <p class="name">씨브리즈 SEA BREEZE</p>
+                        <img src="src/seabreeze.jpg.webp" alt="">
+                        <p class="comment2">
+                            부드러운 그린루이보스에 비타민나무라고도<br />
+                            불리는 씨벅톤과 파인애플을 더하여<br />
+                            상큼한 활기를 주는 티
+                        </p>
+                    </li>
+                    <li>
+                        <p class="number">8</p>
+                        <p class="comment1">카페인프리 · 허브티 · HOT</p>
+                        <p class="name">진저샷 GINGER SHOT</p>
+                        <img src="src/ginger.jpg.webp" alt="">
+                        <p class="comment2">
+                            유기농 생강에 감초와 허브를 더해<br />
+                            스파이시하면서 향긋하고 달콤한 매력을 가진 티
+                        </p>
+
+                    </li>
+                    <li>
+
+                        <p class="number">9</p>
+                        <p class="comment1">백차 · HOT&ICED</p>
+                        <p class="name">인디안차이 INDIAN CHAI</p>
+                        <img src="src/indian.jpg.webp" alt="">
+                        <p class="comment2">
+                            루이보스와 홍차 베이스에 이국적인 향신료를<br />
+                            부드럽게 더해 데일리로 마시기 좋은 차이티
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <h3>UNIQUE TEA</h3>
+                <ul>
+                    <li>
+                        <p class="number">10</p>
+                        <p class="comment1">카페인프리 · 허브티 · 밀크티 추천</p>
+                        <p class="name">저스트프룻 JUST FRUIT</p>
+                        <img src="src/justfruit.jpg.webp" alt="">
+                        <p class="comment2">
+                            과일 사탕 같은 색과 새콤달콤한 맛으로 더운 날<br />
+                            시원하게 즐기기 좋은 티
+                        </p>
+
+                    </li>
+                    <li>
+
+                        <p class="number">11</p>
+                        <p class="comment1">백차 · HOT&ICED</p>
+                        <p class="name">페어앤진저 PEAR & GINGER</p>
+                        <img src="src/pear.jpg.webp" alt="">
+                        <p class="comment2">
+                            산뜻한 오렌지 향으로 시작해 배와 생강의 향이<br />
+                            복합적으로 느껴지는 티
+                        </p>
+                    </li>
+                    <li>
+                        <p class="number">12</p>
+                        <p class="comment1">백차 · HOT&ICED</p>
+                        <p class="name">루이보스카라멜 ROOIBOS CARAMEL</p>
+                        <img src="src/caramel.jpg.webp" alt="">
+                        <p class="comment2">
+                            달콤한 카라멜 향이 주는 사랑스러운 첫인상을<br />
+                            루이보스의 진하고 깊은 맛이 깔끔하게<br />
+                            마무리해주는 티
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer>
+        <ul>
+            <li><a href="mailto:" season460@kaywon.ac.kr>e-mail</a></li>
+            <li><a href="https://github.com/nowblue/nowblue.github.com.git">Github</a></li>
+            <li style="color: black;">About</li>
+            <li style="color: black;">Work</li>
+        </ul>
+        <p style="color: black;">KAYWON UNIVERSITY DIGITAL MEDIA DESIGN SONG HARIM<br />
+            copyrtghtⓒSONG HARIM All RIGHT RESERVED </p>
+    </footer>
+    </div>
+    <script>
+
+    </script>
+
+
+
+
+    <!-- <h2>EDITION DENMARK</h2>
+        <div class="">
+            <ul>
+                <li><img src="src/honey2.png" /></li>
+                <li><img src="src/vanilla2.png" /></li>
+                <li><img src="src/white2.png" /></li>
+            </ul>
+            <ul>
+                <li><img src="src/4.png" /></li>
+                <li><img src="src/5.png" /></li>
+                <li><img src="src/6.png" /></li>
+            </ul>
+            <ul>
+                <li><img src="src/7.png" /></li>
+                <li><img src="src/8.png" /></li>
+                <li><img src="src/9.png" /></li>
+                <li><img src="src/10.png" /></li>
+                <li><img src="src/11.png" /></li>
+            </ul>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="mailto:" season460@kaywon.ac.kr>e-mail</a></li>
+                <li><a href="https://github.com/nowblue/nowblue.github.com.git">Github</a></li>
+                <li style="color: black;">About</li>
+                <li style="color: black;">Work</li>
+            </ul>
+            <p style="color: black;">KAYWON UNIVERSITY DIGITAL MEDIA DESIGN SONG HARIM<br />
+                copyrtghtⓒSONG HARIM All RIGHT RESERVED </p>
+        </footer>
+    </div> -->
+</body>
+
+</html>

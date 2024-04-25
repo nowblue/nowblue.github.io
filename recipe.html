@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>recipe</title>
+    <style>
+        #wrap {
+            /* background: #1a2218; */
+            /* repeat(x,y축 위아래 둘 다), repeat-x, repeat-y, no-repeat; ---no repeat 시에 background color를 정해 놓으면 background img가 없는 부분에 색상으로 채워진다 */
+            background-color: #1a2218;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .container {
+            /* display : block 
+            margin: 0 auto*/
+            width: 500px;
+            height: 500px;
+            /* text-align: center; */
+            margin: 0 auto;
+            margin-bottom: 150px;
+            /* margin : 위 오른쪽 아래 왼쪽 ;*/
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .your_class {
+            /* width: 700px; */
+            position: relative;
+        }
+
+        .slick-prev {
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            left: -100px;
+
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            /* border: none; */
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+
+        .slick-next {
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            right: -100px;
+
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+
+
+
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            border-radius: 10px;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            animation-name: modalopen;
+            animation-duration: 0.4s;
+        }
+
+        @keyframes modalopen {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 이미지 스타일 */
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #was {
+            text-align: center;
+            padding: 220px 0px 0px 20px;
+            margin: 0px;
+        }
+    </style>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="main_visual">
+            <header>
+                <h1><a href="index.html"><img src="src/logo.png" class="logo" /></a></h1>
+                <ul>
+                    <li><a href="tea.html">TEA</a></li>
+                    <li><a href="recipe.html">RECIPE</a></li>
+                    <li><a href="brand.html">BRAND</a></li>
+                    <li><a href="recommand.html">RECOMMAND</a></li>
+                    <li><a href="map.html">MAP</a></li>
+                </ul>
+            </header>
+            <div id="main_header">
+                <div class="container">
+                    <div class="your_class">
+                        <div title="클릭하면 [밀크티]를 자세히 확인하실 수 있습니다.">
+                            <img class="img" src="src/milktea.png" />
+                            <div class="modal-text" style="display:none;">
+                                <p style="color: black;">
+                                    밀크티 <br/>
+                                    <br/>
+                                    준비물: 300ml 3g <br/><br/>
+                                    3분이 정석이지만 약간 오래, 진하게 우려도 밀크티에는 괜찮다.<br/><br/>
+                                    차를 따른 후 우유를 조금씩 넣으면서 입맛에 맞추기.<br/><br/>
+                                    우유에서 비린 맛이 난다면 각설탕 기준 1-2개 정도 넣기.
+                                </p>
+                            </div>
+                        </div>
+                        <div title="클릭하면 [아이스 티펀치]를 자세히 확인하실 수 있습니다.">
+                            <img class="img" src="src/iceteapunch.png" />
+                            <div class="modal-text" style="display:none;">
+                                <p style="color: black;">
+                                아이스 티펀치<br/><br/>
+                                준비물: 큰 대접, 국자, 칵테일 담을 글라스, 소주 1병,<br/>갈아만든 배 사이다 1L, 레몬 1/2개, 꿀 2큰술, 아이스티 파우더 2큰술, 계절 과일.<br/><br/>
+                                소주를 대접에 가장 먼저 부어주고 아이스티 파우더도<br/>2큰술 넣고 숟가락으로 저어 녹인다.<br/><br/>
+                                절반 크기 레몬 즙을 꿀 2큰술과 넣은 뒤 꿀이 풀릴 때까지 젓기.<br/><br/>
+                                얼음에 이어 사과·귤·오렌지·딸기·오이 등을 넣고 갈아만든 배,<br/>
+                                사이다도 부은 뒤 국자로 저어 글라스에 떠서 마시면 완성!<br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div title="클릭하면 [티뱅쇼]를 자세히 확인하실 수 있습니다.">
+                            <img class="img" src="src/teab.jpeg" />
+                            <div class="modal-text" style="display:none;">
+                                <p style="color: black;">
+                                    티뱅쇼<br/><br/>
+                                    와인 대신 홍차로 만드는 뱅쇼!<br/><br/>
+
+                                    냄비에 레몬이나 귤, 사과, 시나몬 스틱, 물 넣고 끓이기.<br/><br/>
+                                    홍차를 티백에 담아 끓인다.<br/><br/>
+                                    잔에 차를 붓고 과일, 시나몬 스틱, 허브로 장식하면 완성!
+                                </p>
+                            </div>
+                        </div>
+                        <div title="클릭하면 [마살라짜이]를 자세히 확인하실 수 있습니다.">
+                            <img class="img" src="src/zzai.png" />
+                            <div class="modal-text" style="display:none;">
+                                <p style="color: black;">
+                                    짜이<br/><br/>
+                                    준비물: 홍차, 우유, 설탕, 생강, 냄비와 거르망<br/><br/>
+
+                                    우유 5컵을 냄비에 넣고 끓이기<br/><br/>
+                                    우유가 끓으면 약불로 줄이고 홍차와 생강을 넣는다.<br/>
+                                    (생강은 빻은 생강으로 아주아주 조금만!)<br/><br/>
+                                    기호에 따라 설탕을 넣고 약불로 15-20분 끓이기<br/><br/>
+                                    거름망에 걸러 마시면 맛있는 짜이!
+
+                                </p>
+                            </div>
+                        </div>
+                        <div title="클릭하면 [복숭아 아이스티]를 자세히 확인하실 수 있습니다.">
+                            <img class="img" src="src/peach.png" />
+                            <div class="modal-text" style="display:none;">
+                                <p style="color: black;">
+                                복숭아 아이스티<br/><br/>
+                                준비물: 복숭아 1/2개, 레몬즙 1큰술, 물 500ml, 설탕 4큰술, 홍차티백 3개<br/><br/>
+                                껍질은 깎아도 좋고 안 깎아도 좋고, 양파 다지듯이 잘게 자른다<br/>
+                                설탕과 레몬즙을 넣고 골고루 섞어 냉장보관 10분!<br/><br/>
+                                물에 홍차 티백 우리고 우려진 물에 복숭아와 얼음을 넣으면 완성!
+                                </p>
+                            </div>
+                        </div>
+                        <div title="클릭하면 [얼그레이 초코 밀크티]를 자세히 확인하실 수 있습니다.">
+                            <img class="img" src="src/choco.jpeg" />
+                            <div class="modal-text" style="display:none;">
+                                <p style="color: black;">
+                                얼그레이 초코 밀크티<br/><br/>
+                                준비물: 얼그레이 티백 3개, 우유150g, 다크초콜릿30g, 밀크초콜릿15g, 얼음컵<br/><br/>
+                                우유 중탕으로 데우고 얼그레이 티백을 우려준다.<br/><br/>
+                                초콜릿도 중탕으로 녹여 밀크티를 조금씩 부어 저어준다.<br/><br/>
+                                덩어리 없이 잘 되었다면 얼음컵에 넣어 마시기.
+                                </p>
+                            </div>
+                        </div>
+                        <div title="클릭하면 [우롱 밀크티]를 자세히 확인하실 수 있습니다.">
+                            <img class="img" src="src/oorong.jpg" />
+                            <div class="modal-text" style="display:none;">
+                                <p style="color: black;">
+                                우롱 밀크티<br/><br/>
+                                준비물: 우롱차 40g, 브라운슈가 250ml<br/><br/>
+                                    우롱티 양의 10배의 물을 끓여준다.<br/><br/>
+                                    우롱잎을 15분간 우리고 체에 걸러 찻물 양을 측정한다<br/><br/>
+                                    찻물 양과 동량의 설탕을 함께 15분간 끓이면 완성!<br/><br/>
+                                    냉장고에 식혀 마시면 된다.
+                                </p>
+                            </div>
+                        </div>
+                        <div title="클릭하면 [깔루아말차]를 자세히 확인하실 수 있습니다.">
+                            <img class="img" src="src/matcha.jpg" />
+                            <div class="modal-text" style="display:none;">
+                                <p style="color: black;">
+                                    깔루아말차<br/><br/>
+                                    준비물: 얼음, 칼루아 말차30ml, 우유 90ml, 말차아이스크림<br/><br/>
+                                    얼음이 든 글라스를 준비한다.<br/><br/>
+                                    칼루아 말차를 30ml를 넣는다.<br/><br/>
+                                    우유를 90ml 넣는다.<br/><br/>
+                                    말차 아이스크림을 띄운다.<br/><br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="myModal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img id="modalImg" src="" style="width: 300px; border-radius:10px;" />
+                    <div id="modalText"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <ul>
+                <li><a href="mailto:" season460@kaywon.ac.kr>e-mail</a></li>
+                <li><a href="https://github.com/nowblue/nowblue.github.com.git">Github</a></li>
+                <li>About</li>
+                <li>Work</li>
+            </ul>
+            <p>KAYWON UNIVERSITY DIGITAL MEDIA DESIGN SONG HARIM<br />
+                copyrtghtⓒSONG HARIM All RIGHT RESERVED </p>
+        </footer>
+    </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.your_class').slick({
+                // setting-name: setting-value
+                dots: false,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                arrows: true,
+                prevArrow: "<button type='button' class='slick-prev' style='color: white;'> < </button>",		// 이전 화살표 모양 설정
+                nextArrow: "<button type='button' class='slick-next' style='color: white;'> > </button>",		// 다음 화살표 모양 설정
+            });
+        });
+    </script>
+
+    <script>
+        // 이미지 클릭 시 모달 열기
+        document.querySelectorAll('.your_class img').forEach(function (img, index) {
+            img.addEventListener('click', function () {
+                var modalImg = document.getElementById('modalImg');
+                var modalText = document.getElementById('modalText');
+                modalImg.src = this.src;
+                modalText.innerHTML = this.parentElement.querySelector('.modal-text').innerHTML;
+                document.getElementById('myModal').style.display = 'block';
+                // 모달이 열릴 때 텍스트를 보이도록 설정
+                document.querySelector('.modal-text').style.display = 'block';
+            });
+        });
+
+        // 모달 창 닫기
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('myModal').style.display = 'none';
+        });
+    </script>
+</body>

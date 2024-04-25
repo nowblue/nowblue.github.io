@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>recommand</title>
+    <style>
+        #wrap {
+            /* background: #1a2218; */
+            /* repeat(x,y축 위아래 둘 다), repeat-x, repeat-y, no-repeat; ---no repeat 시에 background color를 정해 놓으면 background img가 없는 부분에 색상으로 채워진다 */
+            background-color: #ffffff;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #warp {
+            min-width: 1000px;
+            max-width: 1920px;
+            margin: 0px auto;
+        }
+
+        header {
+            padding: 20px;
+            color: white;
+            display: flex;
+        }
+
+        #main_header {
+            margin: 100px 0px 0px 0px;
+        }
+
+        h1 {
+            margin: 10px 10px;
+        }
+
+        h1 img {
+            width: 100px;
+            height: auto;
+        }
+
+        header ul {
+            display: flex;
+            margin-left: auto;
+        }
+
+        header ul li {
+            list-style: none;
+            padding: 0px 15px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        header>ul>li>a:hover {
+            color: #5aa344;
+            /*마우스 올렸을 떄*/
+            font-weight: 800;
+        }
+
+
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .wrap1{
+            margin-top: 50px;
+        }
+
+        .container p{
+            color: #333;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h3{
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: 600px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: inline;
+            margin: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        footer p {
+            font-size: 0.5em;
+            margin: 0px;
+            padding: 10px 0px 20px 0px;
+        }
+
+        footer ul {
+            list-style: none;
+            display: inline-flex;
+        }
+
+        footer li {
+            padding: 0px 20px 0px 0px;
+        }
+
+        footer li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        footer li :hover {
+            color: #5aa344;
+            text-shadow: 3px;
+            font-weight: 800;
+        }
+
+        .tea-food,
+        .tea-house {
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tea-food li img,
+        .tea-house li img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .tea-food li img:hover,
+        .tea-house li img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <h1><a href="index.html"><img src="src/logo.png" class="logo" /></a></h1>
+            <ul>
+                <li><a href="tea.html">TEA</a></li>
+                <li><a href="recipe.html">RECIPE</a></li>
+                <li><a href="brand.html">BRAND</a></li>
+                <li><a href="recommand.html">RECOMMAND</a></li>
+                <li><a href="map.html">MAP</a></li>
+            </ul>
+        </header>
+        <div class="wrap1">
+            <div class="container">
+                <h3>추천 다식</h3>
+                <ul class="tea-food">
+                    <li>
+                        <p>금귤정과</p>
+                        <img src="src/food1.jpeg" alt="금귤정과">
+                    </li>
+                    <li>
+                        <p>당고</p>
+                        <img src="src/food2.jpg" alt="">
+                    </li>
+                    <li>
+                        <p>약과</p>
+                        <img src="src/food3.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <h3>추천 티룸</h3>
+                <ul class="tea-house">
+                    <li>
+                        <p>삼월황 논커피바</p>
+                        <img src="src/samwol.jpeg" alt="">
+                    </li>
+                    <li>
+                        <p>맥파이앤타이거 티룸</p>
+                        <img src="src/MT.jpg" alt="">
+                    </li>
+                    <li>
+                        <p>이음 티하우스</p>
+                        <img src="src/ouem.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="mailto:" season460@kaywon.ac.kr>e-mail</a></li>
+                <li><a href="https://github.com/nowblue/nowblue.github.com.git">Github</a></li>
+                <li style="color: black;">About</li>
+                <li style="color: black;">Work</li>
+            </ul>
+            <p style="color: black;">KAYWON UNIVERSITY DIGITAL MEDIA DESIGN SONG HARIM<br />
+                copyrtghtⓒSONG HARIM All RIGHT RESERVED </p>
+        </footer>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>
